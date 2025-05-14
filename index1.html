@@ -1,0 +1,100 @@
+index1.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Transitions and Animations</title>
+    <style>
+        /* Basic style for the button */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* CSS transition for smooth hover effect */
+        }
+
+        /* Hover effect */
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.1); /* Animation to make the button slightly bigger on hover */
+        }
+
+        /* Animation for a simple fade-in effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-in-out; /* Apply fade-in animation */
+        }
+
+        /* Basic layout */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to CSS3 Transitions and Animations</h1>
+    <button id="animateBtn" class="fade-in">Click me to animate!</button>
+    <div id="userPreference"></div>
+
+    <script>
+        // Function to store user preferences in localStorage
+        function storeUserPreference() {
+            const userColor = prompt("Enter your favorite color:");
+            if (userColor) {
+                // Store the color in localStorage
+                localStorage.setItem("favoriteColor", userColor);
+            }
+        }
+
+        // Function to apply user preferences from localStorage
+        function applyUserPreference() {
+            const storedColor = localStorage.getItem("favoriteColor");
+            if (storedColor) {
+                document.body.style.backgroundColor = storedColor;
+                document.getElementById("userPreference").innerText = `Your favorite color is: ${storedColor}`;
+            } else {
+                document.getElementById("userPreference").innerText = "You have not set a favorite color.";
+            }
+        }
+
+        // Function to trigger animation when button is clicked
+        function triggerAnimation() {
+            const button = document.getElementById("animateBtn");
+            button.classList.add("fade-in");
+            setTimeout(() => {
+                button.classList.remove("fade-in"); // Remove animation after it completes
+            }, 2000); // 2 seconds for the animation duration
+        }
+
+        // Event listeners
+        document.getElementById("animateBtn").addEventListener("click", function () {
+            triggerAnimation(); // Trigger animation on button click
+            storeUserPreference(); // Store user's favorite color
+            applyUserPreference(); // Apply the stored preferences
+        });
+
+        // Check if preferences exist on page load
+        window.onload = applyUserPreference;
+    </script>
+</body>
+</html>
