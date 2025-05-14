@@ -1,0 +1,58 @@
+home.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoThoughts Blog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>EcoThoughts</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Welcome to EcoThoughts</h2>
+      <p>Sharing ideas on sustainability, art, and environmental impact.</p>
+    </section>
+
+    <section class="posts">
+      <article class="post">
+        <h3>Reimagining Waste Through Art</h3>
+        <p class="meta">Posted on May 10, 2025</p>
+        <p>Explore how discarded plastics become powerful messages through upcycled art installations.</p>
+        <button onclick="toggleContent(this)">Read More</button>
+        <div class="more-content">
+          <p>By collecting, cleaning, and creatively assembling waste materials, we not only reduce pollution but also inspire dialogue around sustainability and responsibility. Let art be your megaphone for the planet.</p>
+        </div>
+      </article>
+
+      <article class="post">
+        <h3>Youth and the Green Revolution</h3>
+        <p class="meta">Posted on April 28, 2025</p>
+        <p>Changemakers are rising. Discover how young people are transforming communities through environmental education and action.</p>
+        <button onclick="toggleContent(this)">Read More</button>
+        <div class="more-content">
+          <p>From bootcamps to clean-up drives, today’s youth are blending passion with purpose to restore ecosystems and promote responsible living.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 EcoThoughts Blog. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
